@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<!-- <input type="text" > -->
+    </div>
+    <script>
+let input=document.createElement('input')
+let container=document.querySelector('.container')
+let button=document.createElement('button')
+button.innerText="Increment"
+let button2=document.createElement('button')
+button2.innerText="decrement"
+container.append(button,button2,input)
+
+
+let count=1;
+
+
+button.addEventListener('click',()=>{
+   input.value=count++;
+   if(input.value>1){
+    button2.style.visibility='visible'
+   }
+})
+button2.addEventListener('click',()=>{
+    input.value=count--;
+    if(input.value==1){
+         button2.style.visibility='hidden'
+    }
+})
+    </script>
+</body>
+</html>
