@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        
+    </div>
+    <script>
+        let container=document.querySelector('.container')
+
+        let balance = Number(prompt('Enter the balance'))
+        let button = document.createElement('button')
+        button.innerText = "Credit";
+
+        let btn=document.createElement('button')
+        btn.innerText = "debit";
+        let h1=document.createElement('h1')
+        h1.innerText=`enter the amount${balance}`
+        button.addEventListener('click',()=>{
+            let amount=Number(prompt('enter the amount to credit'))
+            
+            if(amount>0){
+               balance=balance+amount
+                h1.innerText=`your available amount is${balance}`;
+            }
+            if(amount==0){
+                h1.innerText=`your available amount is${balance}`
+            }
+        })
+        btn.addEventListener('click',()=>{
+            let money=Number(prompt('enter amount to want debit'))
+            if(money>0)
+            balance=balance-money
+            h1.innerText=`your available amount is${balance}`;
+            if(money==0){
+                h1.innerText=`your available amount is${balance}`
+            }
+            if(balance<money){
+                h1.innerText=` amount is insufficient ${balance}`
+            }
+        })
+        container.append(button, btn,h1);
+
+    </script>
+</body>
+
+</html>
